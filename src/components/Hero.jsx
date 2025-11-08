@@ -6,7 +6,7 @@ import './Hero.css';
 // --- IMPORT YOUR ASSETS ---
 import vFilmsLogo from '../assets/v-films-logo.png';
 import mandalaGraphic from '../assets/Hero Mandala.svg';
-import scrollIcon from '../assets/scroll.svg';
+import scrollIcon from '../assets/Scroll.svg';
 
 const Hero = () => {
   return (
