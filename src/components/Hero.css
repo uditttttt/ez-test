@@ -1,0 +1,136 @@
+/* src/components/Hero.css */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 5% 2rem; 
+  overflow: hidden; 
+  box-sizing: border-box;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.hero-left {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.hero-mandala {
+  width: 100%;
+  max-width: 565px;
+  opacity: 1;
+}
+
+.hero-logo-main {
+  position: absolute;
+  width: 68%;
+  max-width: 388px;
+}
+
+.hero-right {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.hero-headline {
+  font-family: var(--font-heading); /* 'Island Moments' */
+  font-size: 100px;
+  font-weight: 400;
+  color: var(--color-headline); /* #0F3255 */
+  line-height: 1.1;
+  margin: 0;
+  text-align: center;
+}
+
+.hero-headline-line1 {
+  white-space: nowrap;
+}
+
+.hero-subheadline {
+  font-family: var(--font-subheading); /* 'Halant' */
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--color-subheadline-orange); /* #F15D2B */
+  margin: 0;
+  text-align: center;
+}
+
+.hero-description {
+  font-family: var(--font-body); /* 'Instrument Sans' */
+  font-size: 16.3px;
+  font-weight: 400;
+  color: var(--color-body-text); /* #252729 */
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+  text-align: center; 
+  
+  /* --- THIS IS THE FIX --- */
+  /* This centers the 500px-wide box within its flex parent */
+  align-self: center; 
+}
+
+.scroll-indicator {
+  width: 200px; 
+  height: 12px; 
+  border-radius: 6px;
+  margin: 3rem 0 0 5%; /* Position bottom-left */
+  display: block; 
+}
+
+/* --- MOBILE & TABLET STYLES --- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 6rem;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero-right {
+    align-items: center;
+    width: 100%; 
+  }
+
+  .hero-headline {
+    font-size: 60px; 
+    white-space: normal; 
+  }
+  
+  .hero-headline-line1 {
+    white-space: normal;
+  }
+
+  .hero-subheadline {
+    font-size: 30px;
+  }
+  
+  .hero-description {
+    font-size: 16px;
+    text-align: center; 
+    /* align-self: center; is inherited from .hero-right's 'align-items: center' */
+  }
+
+  .scroll-indicator {
+    margin: 3rem auto 0; /* Center on mobile */
+  }
+}

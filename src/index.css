@@ -1,0 +1,36 @@
+/* src/index.css */
+
+/* --- FONT IMPORT --- */
+@import url('https://fonts.googleapis.com/css2?family=Halant&family=Instrument+Sans&family=Island+Moments&display=swap');
+
+:root {
+  /* --- FONT FAMILIES --- */
+  --font-heading: 'Island Moments', cursive;
+  --font-subheading: 'Halant', serif;
+  --font-body: 'Instrument Sans', sans-serif;
+
+  /* --- COLORS --- */
+  --color-headline: #0F3255;      /* Dark Blue */
+  --color-subheadline-orange: #F15D2B;
+  --color-button-orange: #F15D2B; /* Same as subheadline */
+  --color-body-text: #252729;    /* Dark Gray */
+  --color-nav-links: #000000;    /* Black */
+  --color-bg-light: #fdfaf9;     /* Off-white from your screenshots */
+  --color-scroll-bar: #FDDCC1;   /* Light Orange */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body); /* Set default font */
+  background-color: var(--color-bg-light);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}

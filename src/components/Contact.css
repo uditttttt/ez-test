@@ -1,0 +1,234 @@
+/* src/components/Contact.css */
+
+.contact-section {
+  position: relative;
+  padding: 8rem 5% 5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: var(--color-bg-light); 
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1300px; /* 600px + 700px */
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+/* --- Left Side Text (FIXED) --- */
+.contact-left {
+  flex: 1; /* Allows shrinking */
+  max-width: 600px; /* From your screenshot */
+  min-width: 300px; /* Prevents over-squishing */
+  padding-top: 16rem;
+}
+
+.contact-left p {
+  font-family: var(--font-body); /* 'Instrument Sans' */
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--color-body-text);
+}
+
+/* --- Right Side Form (FIXED) --- */
+.contact-right {
+  flex: 1; /* Allows shrinking */
+  max-width: 700px; /* From your screenshot */
+  min-width: 300px; /* Prevents over-squishing */
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form h2 {
+  font-family: var(--font-subheading); /* 'Halant' */
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--color-body-text);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form .form-subtitle {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1.2rem; /* Make space for error text */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1.25rem;
+  border: 1px solid #EAEAEA;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.submit-btn {
+  background-color: var(--color-button-orange);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 2rem;
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  /* --- THIS IS THE FIX for Image 1 --- */
+  /* This does the same as align-self: flex-start */
+  margin-right: auto; 
+}
+
+.submit-btn:hover {
+  background-color: #d15f3a;
+}
+
+/* --- Contact Info --- */
+.contact-info {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-info a {
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--color-subheadline-orange);
+  text-decoration: none;
+}
+
+/* --- Decorative Mandalas (FIXED) --- */
+.contact-mandala {
+  position: absolute;
+  z-index: 1;
+  opacity: 1; /* Faded */
+  width: 30%; /* Use percentage for responsiveness */
+  max-width: 450px; /* Max size */
+}
+.mandala-top {
+  top: 0;
+  right: 0;
+}
+.mandala-bottom {
+  bottom: 0;
+  left: 0;
+  /* Removed transform property */
+}
+
+/* ========================================
+   NEW RESPONSIVE STYLES (THE FIX for Image 2)
+========================================
+*/
+@media (max-width: 768px) {
+  .contact-section {
+    padding-top: 6rem; /* Less padding on mobile */
+  }
+  
+  .contact-container {
+    flex-direction: column; /* Stacks the columns */
+    gap: 2rem; /* Reduces space between them */
+  }
+
+  .contact-left {
+    padding-top: 0; /* Removes the huge 16rem gap */
+    max-width: 100%;
+  }
+
+  .contact-left p {
+    font-size: 18px; /* More readable on mobile */
+    text-align: center; /* Center the text */
+  }
+  
+  .contact-right {
+    max-width: 100%;
+  }
+
+  /* Center the form content */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-form h2,
+  .contact-form .form-subtitle {
+    text-align: center;
+  }
+  
+  .form-group {
+    width: 100%; /* Make inputs full-width */
+  }
+  
+  .submit-btn {
+    width: 100%;
+    margin-right: 0; /* Reset the desktop margin */
+  }
+  
+  .contact-info {
+    justify-content: center; /* Center the info links */
+  }
+
+  /* Hide mandalas on small screens to reduce clutter */
+  .contact-mandala {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+
+/* --- ERROR & SUCCESS STYLES --- */
+.error-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #D93025; /* Red */
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.success-text {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: #1E8E3E; /* Green */
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.error-text.submit-error {
+  position: relative; /* Reset position for submit error */
+  margin-top: 1rem;
+  font-size: 16px;
+}
+
+/* Style for disabled button */
+.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

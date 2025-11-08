@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "2b78acc7-fe6c-4bee-b6b2-b49055a0907d",
+		"name": "EZ Labs Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31695894",
+		"_collection_link": "https://crimson-station-515642.postman.co/workspace/iii~4780005c-541d-45be-ad7b-14d2c1905846/collection/31695894-2b78acc7-fe6c-4bee-b6b2-b49055a0907d?action=share&source=collection_link&creator=31695894"
+	},
+	"item": [
+		{
+			"name": "Submit Contact Form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Test user\",\r\n  \"email\": \"testuser@gmail.com\",\r\n  \"phone\": \"908765498\",\r\n  \"message\": \"This is a message\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vernanbackend.ezlab.in/api/contact-us/",
+					"protocol": "https",
+					"host": [
+						"vernanbackend",
+						"ezlab",
+						"in"
+					],
+					"path": [
+						"api",
+						"contact-us",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
