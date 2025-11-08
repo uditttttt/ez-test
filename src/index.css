@@ -10,19 +10,26 @@
   --font-body: 'Instrument Sans', sans-serif;
 
   /* --- COLORS --- */
-  --color-headline: #0F3255;      /* Dark Blue */
+  --color-headline: #0F3255;
   --color-subheadline-orange: #F15D2B;
-  --color-button-orange: #F15D2B; /* Same as subheadline */
-  --color-body-text: #252729;    /* Dark Gray */
-  --color-nav-links: #000000;    /* Black */
-  --color-bg-light: #fdfaf9;     /* Off-white from your screenshots */
-  --color-scroll-bar: #FDDCC1;   /* Light Orange */
+  --color-button-orange: #F15D2B;
+  --color-body-text: #252729;
+  --color-nav-links: #000000;
+  
+  /* --- THIS IS THE FIX --- */
+  /* This is the light, off-white background color */
+  --color-bg: #fdfaf9; 
+  
+  --color-scroll-bar: #FDDCC1;
 }
 
 body {
   margin: 0;
-  font-family: var(--font-body); /* Set default font */
-  background-color: var(--color-bg-light);
+  font-family: var(--font-body);
+  
+  /* --- THIS IS THE FIX --- */
+  /* Apply the light background color */
+  background-color: var(--color-bg);
 }
 
 * {
@@ -31,6 +38,10 @@ body {
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+/* --- ADD THIS RULE --- */
+/* This targets the main <div> in App.jsx */
+.App {
+  /* This applies your texture image */
+  background-image: url('./assets/dotted-texture.png');
+  background-repeat: repeat;
 }
